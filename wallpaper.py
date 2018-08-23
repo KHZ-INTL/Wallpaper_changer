@@ -77,7 +77,7 @@ class wallpaper():
 
         arg_parser.add_argument("-d", "--dir", action="store", help="Path of folder that contain wallpapers.")
 
-        arg_parser.add_argument("-w", "--wall", action="store", help="Path of folder that contain wallpapers.")
+        arg_parser.add_argument("-w", "--wall", action="store", help="File path of wallpaper.")
 
         arg_parser.add_argument("-t", "--time", action="store_true", help="Use time of day to pick Wallpaper")
         
@@ -194,8 +194,15 @@ class wallpaper():
             it will use 2nd returned image as wallpaper.
         Prints names of both last wallpaper and new. 
         """
-        
-        wallpapers = self.search()
+
+        wallpapers = ""
+
+        if self.args.wall:
+            wallpapers = self.args.wall
+            self.exec_sh("nitrogen --set-scaled {}".format(wallpapers))
+            return
+        else:
+            wallpapers = self.search()
 
         if len(wallpapers) == 0:
             self.invalid_wall_dir()
