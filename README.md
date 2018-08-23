@@ -4,12 +4,17 @@ A python script that sets wallpapers from randomly selected images from a folder
 Also able to set wallpapers based on time. If Local time &lt; 4PM, wallpaper is selected from: with "day" in filename. Appropriately for night. It was developed to be run periodically with crontab, --time flag comes handy sometimes. 
 
 
+The application does not run run continuously in the background, this on purpose so that it does not use ram and resources. For it to change wallpapers automatically it needs to be setup with crontab. Please see my example below. 
+
 #### Configuration:
 On initial launch it will create a configuration file at "~/.config/wallpaper.ini". Please set your wallpaper directory under "wallpaper_dir".
 Example:
 
 [Settings]
 wallpaper_dir = /home/myUserName/Pictures/walls/_/
+
+
+
 
 
 #### Wallpaper File Naming Convention:
