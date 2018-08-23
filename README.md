@@ -1,10 +1,10 @@
 # Wallpaper_changer
-A python script that sets wallpapers from randomly selected images from a folder. Also able to search for specific wallpaper. It can filter for images that have or should'nt have specific words, keyword in image file name using the grep program. 
+A python script that sets the wallpaper from randomly selected images, from defined folder. Also able to search for specific wallpaper. It can filter for images that have or should'nt have words, keyword in image file name, utilising the grep program. 
 
 Also able to set wallpapers based on time. If Local time &lt; 4PM, wallpaper is selected from: with "day" in filename. Appropriately for night. It was developed to be run periodically with crontab, --time flag comes handy sometimes. 
 
 
-The application does not run run continuously in the background, this on purpose so that it does not use ram and resources. For it to change wallpapers automatically it needs to be setup with crontab. Please see my example below. 
+The application does not run run continuously in the background, this is on purpose so that it does not use ram and resources. For it to change wallpapers automatically it needs to be setup with crontab. Please see my example below. 
 
 #### Configuration:
 On initial launch it will create a configuration file at "~/.config/wallpaper.ini". Please set your wallpaper directory under "wallpaper_dir".
