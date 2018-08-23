@@ -1,4 +1,4 @@
-# auto_wallpaper_changer
+# Wallpaper_changer
 A python script that sets wallpapers from randomly selected images from a folder. Also able to search for specific wallpaper. It can filter for images that have or should'nt have specific words, keyword in image file name using the grep program. 
 
 Also able to set wallpapers based on time. If Local time &lt; 4PM, wallpaper is selected from: with "day" in filename. Appropriately for night. It was developed to be run periodically with crontab, --time flag comes handy sometimes. 
