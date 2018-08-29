@@ -28,7 +28,7 @@ Example 2: alena-aenami-darknight_night_forest_dark_night_moon_painting.jpg
 I have set it to change wallpaper every 10 minutes. Please refer to crontab manual/wiki.
 
 An example of using it with crontab:
-*/10 * * * * export "$HOME=/home/yuki"; export DISPLAY=":0.0"; /home/myUserName/my_scripts/bin/wallpaper.py --time; 
+*/10 * * * * export "$HOME=/home/MyUserName"; export DISPLAY=":0.0"; /home/myUserName/my_scripts/bin/wallpaper.py --time; 
 
 
 #### Arguments
