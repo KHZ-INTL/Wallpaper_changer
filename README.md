@@ -18,10 +18,11 @@ wallpaper_dir = /home/myUserName/Pictures/walls/_/
 
 
 #### Wallpaper File Naming Convention:
-My wallpapers have "_night", "_day" or both "_day_night", "bright", "dark", etc in their filename. This way this script can filter them. 
+My wallpapers have "_night", "_day" or both "_day_night", "bright", "dark", etc in their filename. This way this script can filter them when used with the --time or --search flags. It is up to you, don't have to follow this naming convention.  
 few examples:
 
 Example 1: sunset_dark_night_painting.jpg
+
 Example 2: alena-aenami-darknight_night_forest_dark_night_moon_painting.jpg
 
 #### CRONTAB:
