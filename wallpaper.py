@@ -60,6 +60,12 @@ class wallpaper():
         if self.args.dir:
             self.update_setting(self.config_file, "wallpaper_dir", self.args.dir)
 
+        if self.args.delete:
+            self.delete_cWall()
+        
+        if self.args.info:
+            self.info()
+            exit()
 
         if self.args.time:
             print("Will set wallpaper based on time !")
@@ -80,6 +86,10 @@ class wallpaper():
         arg_parser.add_argument("-w", "--wall", action="store", help="File path of wallpaper.")
 
         arg_parser.add_argument("-t", "--time", action="store_true", help="Use time of day to pick Wallpaper")
+
+        arg_parser.add_argument("-i", "--info", action="store_true", help="Show current configuration values")
+
+        arg_parser.add_argument("-D", "--delete", action="store_true", help="Delete current wallpaper")
         
         arg_parser.add_argument("-s", "--search", action="store", help="Filter images with keywords in file name. Use comma to seperate keywords.")
 
@@ -148,7 +158,17 @@ class wallpaper():
         if int(time.strftime("%H")) > 16:
             return False
         else:
-            return False 
+            return False
+
+    def info(self):
+        """ Show the current values used in configuration file
+        :returns: None
+
+        """
+        for i in self.get_config(self.config_file)["Settings"]:
+            print("[{}]".format(i), ": ", self.get_setting(self.config_file, i))
+            
+
 
     def search(self, shuff="2"):
         """
@@ -184,6 +204,14 @@ class wallpaper():
         wallpapers = self.exec_sh(command)
         return wallpapers
 
+    def delete_cWall(self):
+    	current_wallpaper = self.get_setting(self.config_file, "last_wallpaper")
+    	self.exec_sh("rm {}".format(current_wallpaper))
+    	self.update_setting(self.config_file, "last_wallpaper", "")
+    	print("attempting to delete: ", current_wallpaper)
+
+
+
     def set(self):
         """
         Calls search method, it will try to return 2 images.
@@ -199,7 +227,8 @@ class wallpaper():
 
         if self.args.wall:
             wallpapers = self.args.wall
-            self.exec_sh("nitrogen --set-scaled {}".format(wallpapers))
+            #self.exec_sh("nitrogen --set-scaled {}".format(wallpapers))
+            self.exec_sh("feh --bg-scale {}".format(wallapapers))
             return
         else:
             wallpapers = self.search()
@@ -208,7 +237,8 @@ class wallpaper():
             self.invalid_wall_dir()
             return False
 
-        command = "nitrogen --set-scaled"
+        #command = "nitrogen --set-scaled"
+        command = "feh --bg-scale"
 
         # check if last_wallpaper == newly selected
         if wallpapers[0] == self.get_setting(self.config_file, "last_wallpaper"):
@@ -235,7 +265,5 @@ class wallpaper():
         # Clear screen, terminal.
         os.system('clear')
     
-
-        
 if __name__ == "__main__":
     wall = wallpaper()
