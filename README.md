@@ -43,16 +43,22 @@ An example of using it with crontab:
 `wallpaper.py --dir="/home/myUserName/Pictures/walls/unfiltered/"`
 
 ##### Set a specific wallpaper: -w --wall:
-`wallpaper.py -w /home/myUserName/Pictures/walls/unfiltered/2.jpg"`
+`wallpaper.py --wall /home/myUserName/Pictures/walls/unfiltered/2.jpg"`
 
 ##### Set wallpaper based on time: -t --time:
 `wallpaper.py --time`
+
+##### Delete currently set wallpaper: -D --delete:
+`wallpaper.py --delete`
+
+##### Show information/configuartion values: -i --info:
+`wallpaper.py --info`
 
 
 Built for linux OS. It uses find, ls, grep and other programs. Uses $HOME and forward slash. Feel free to port to other OS.
 ##### Dependencies:               NOTES:
             python3
-            nitrogen        wallpaper utility
+            feh             wallpaper utility
             argparse        python package. It maybe available with python standard install.
             configparser    python package. It maybe available with python standard install.
 
