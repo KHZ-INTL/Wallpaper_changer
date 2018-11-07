@@ -1,5 +1,5 @@
 # Wallpaper_changer
-A python script that sets the wallpaper from randomly selected images, from defined folder. Also able to search for specific wallpaper and set it when you need to. It can filter for images that have or shouldn't have words, keyword in image file name, utilising the grep program. 
+A python script that sets the wallpaper from randomly selected images, from a defined folder. Also able to search for a specific wallpaper and set it when you need to. It can filter for images that have or shouldn't have words, keyword in image file name, utilising the grep program. 
 
 Also able to set wallpapers based on time, using --time option. If Local time &lt; 4PM, wallpaper is selected from: with "day" in filename. Appropriately for night. It was developed to be run periodically with crontab. 
 
@@ -7,19 +7,21 @@ Also able to set wallpapers based on time, using --time option. If Local time &l
 The application does not run run continuously in the background, this is on purpose so that it does not use ram and resources. For it to change wallpapers automatically it needs to be setup with crontab. Please see crontab section below. 
 
 ##### CRONTAB
-I have set it to change wallpaper every 10 minutes. Please refer to a crontab manual/wiki.
+I have set it to change wallpaper every 10 minutes. Please refer to a crontab manual/wiki, <a href="https://www.tutorialspoint.com/unix_commands/crontab.htm" target="_blank">TutorialPoint.com</a> have a simple guide on crontab.
 
-An example of using it with crontab:
+
+An example:
 
 `*/10 * * * * export "$HOME=/home/MyUserName"; export DISPLAY=":0.0"; /home/myUserName/my_scripts/bin/wallpaper.py --time;` 
 
 #### Configuration:
-On initial launch it will create a configuration file at "~/.config/wallpaper.ini". Please set your wallpaper directory under "wallpaper_dir".
+On initial launch it will create a configuration file at "~/.config/wallpaper.ini". Please set your wallpaper directory under "wallpaper_dir". Please delete the configuration file when there is an update to the script.
+
 Example:
 
-[Settings]
+`[Settings]`
 
-wallpaper_dir = /home/myUserName/Pictures/walls/_/
+`wallpaper_dir = /home/myUserName/Pictures/walls/_/`
 
 
 #### Wallpaper File Naming Convention:
