@@ -3,8 +3,15 @@ A python script that sets the wallpaper from randomly selected images, from defi
 
 Also able to set wallpapers based on time, using --time option. If Local time &lt; 4PM, wallpaper is selected from: with "day" in filename. Appropriately for night. It was developed to be run periodically with crontab. 
 
-##### Systemc Resources
+##### System Resources
 The application does not run run continuously in the background, this is on purpose so that it does not use ram and resources. For it to change wallpapers automatically it needs to be setup with crontab. Please see crontab section below. 
+
+##### CRONTAB
+I have set it to change wallpaper every 10 minutes. Please refer to a crontab manual/wiki.
+
+An example of using it with crontab:
+
+`*/10 * * * * export "$HOME=/home/MyUserName"; export DISPLAY=":0.0"; /home/myUserName/my_scripts/bin/wallpaper.py --time;` 
 
 #### Configuration:
 On initial launch it will create a configuration file at "~/.config/wallpaper.ini". Please set your wallpaper directory under "wallpaper_dir".
@@ -22,12 +29,6 @@ few examples:
 + Example 1: sunset_dark_night_painting.jpg
 
 + Example 2: alena-aenami-darknight_night_forest_dark_night_moon_painting.jpg
-
-#### CRONTAB:
-I have set it to change wallpaper every 10 minutes. Please refer to a crontab manual/wiki.
-
-An example of using it with crontab:
-*/10 * * * * export "$HOME=/home/MyUserName"; export DISPLAY=":0.0"; /home/myUserName/my_scripts/bin/wallpaper.py --time; 
 
 #### Wal Colour scheme Generation
 If PyWal is enabled; `wallpaper.py --pywal enabled`, then the selected wallppaer will be passed as an argument when calling wal for colour shcme generation. Also, you can change pywal's backend for colour scheme generation by using the `--pywal_backend` argument. You must install the additional backend if not available, they are available in python package repositories, use PIP. Furthermore, you can use random wal colour schemes using the `--pywal_random` argument.
