@@ -4,7 +4,7 @@ A python script that sets the wallpaper from randomly selected images, from a de
 Also able to set wallpapers based on time, using --time option. If Local time &lt; 4PM, wallpaper is selected from: with "day" in filename. Appropriately for night. It was developed to be run periodically with crontab. 
 
 ##### System Resources
-The application does not run run continuously in the background, this is on purpose so that it does not use ram and resources. For it to change wallpapers automatically it needs to be setup with crontab. Please see crontab section below. 
+The application does not run continuously in the background, this is on purpose so that it does not use ram and resources. For it to change wallpapers automatically it needs to be setup with crontab. Please see crontab section below. 
 
 ##### CRONTAB
 I have set it to change wallpaper every 10 minutes. Please refer to a crontab manual/wiki, <a href="https://www.tutorialspoint.com/unix_commands/crontab.htm" target="_blank">TutorialPoint.com</a> have a simple guide on crontab.
