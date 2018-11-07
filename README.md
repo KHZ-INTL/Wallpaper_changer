@@ -29,6 +29,9 @@ I have set it to change wallpaper every 10 minutes. Please refer to a crontab ma
 An example of using it with crontab:
 */10 * * * * export "$HOME=/home/MyUserName"; export DISPLAY=":0.0"; /home/myUserName/my_scripts/bin/wallpaper.py --time; 
 
+#### Wal Colour scheme Generation
+If PyWal is enabled; `wallpaper.py --pywal enabled`, then the selected wallppaer will be passed as an argument when calling wal for colour shcme generation. Also, you can change pywal's backend for colour scheme generation by using the `--pywal_backend` argument. You must install the additional backend if not available, they are available in python package repositories, use PIP. Furthermore, you can use random wal colour schemes using the `--pywal_random` argument.
+
 
 #### Arguments
 
@@ -53,6 +56,17 @@ An example of using it with crontab:
 ##### Show information/configuartion values: -i --info:
 `wallpaper.py --info`
 
+##### Generate colour scheme using Wal-pywal: -p --pywal:
+`wallpaper.py --pywal enabled`
+
+##### Set Wal-pywal backend: -b --pywal_backend:
+`wallpaper.py --pywal_backend colorz`
+optional backends:
++ haishoku
++ wal
++ colorz
++ schemer2
++ colorthief
 
 
 ##### Dependencies:               NOTES:
